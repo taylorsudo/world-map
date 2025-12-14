@@ -175,7 +175,7 @@ export const icons = {
         iconUrl: 'icons/Holiday_event_icon.png',
         ...ICON_DEFAULTS
     }),
-    'House': new Icon({
+    'Hotel': new Icon({
         iconUrl: 'icons/House_portal_icon.png',
         ...ICON_DEFAULTS
     }),

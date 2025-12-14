@@ -211,7 +211,7 @@ export const icons = {
         iconUrl: 'icons/Magic_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Makeover Mage': new Icon({
+    'Medical Spa': new Icon({
         iconUrl: 'icons/Makeover_Mage_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -259,7 +259,7 @@ export const icons = {
         iconUrl: 'icons/Pottery_wheel_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Pub': new Icon({
+    'Bar': new Icon({
         iconUrl: 'icons/Pub_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -351,7 +351,7 @@ export const icons = {
         iconUrl: 'icons/Transportation_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Water Source': new Icon({
+    'Fountain': new Icon({
         iconUrl: 'icons/Water_source_icon.png',
         ...ICON_DEFAULTS
     }),

@@ -1,0 +1,22 @@
+{
+  "name": "rs-map",
+  "version": "1.0.0",
+  "description": "Custom icon map powered by Notion",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "bun server.js",
+    "dev": "bun --watch server.js"
+  },
+  "keywords": [
+    "map",
+    "leaflet",
+    "notion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "leaflet": "^2.0.0-alpha.1"
+  }
+}

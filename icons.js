@@ -151,7 +151,7 @@ export const icons = {
         iconUrl: 'icons/Gem_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Convenience Store': new Icon({
+    'Supermarket': new Icon({
         iconUrl: 'icons/General_store_icon.png',
         ...ICON_DEFAULTS
     }),

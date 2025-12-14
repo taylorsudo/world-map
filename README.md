@@ -22,7 +22,7 @@ PORT=3000
 5) Start the server: `bun start` then open http://localhost:3000
 
 ## Notion Database Schema
-Create a table database with these properties:
+**I automate this with Apple Maps using an Apple Shortcut, which I will add here soon.** In the meantime, create a table database with these properties:
 | Property | Type | Notes |
 | --- | --- | --- |
 | Name | Title | Place name |
@@ -62,9 +62,3 @@ const CONFIG = {
    - `NOTION_API_KEY`
    - `NOTION_DATABASE_ID`
 3. Deploy. The frontend stays static, and `/api/notion/places` & `/api/notion/page` run via serverless functions.
-
-## Troubleshooting
-- **Markers missing?** Check that Latitude/Longitude are numbers and the database is shared with your integration.
-- **Wrong icons?** Ensure your Notion `Category` exactly matches the icon name in `icons.js`, or tweak the mapping in `server.js`.
-- **Popup content not showing?** Make sure you've added content blocks inside each Notion page (not just the database properties).
-- Use the browser console for fetch errors; the backend also logs Notion query issues.

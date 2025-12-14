@@ -8,6 +8,7 @@ Leaflet map that pulls locations from a Notion database (or manual entries) and 
 - Lightweight Bun server for local use, plus Vercel-ready API routes
 - Simple HTML/ESM frontend (Leaflet 2.0 alpha)
 - Marker click shows popup with address and Notion page content
+- Uses Old School RuneScape fonts (stolen from [RuneStar's fonts repo](https://github.com/RuneStar/fonts))
 
 ## Quick Setup
 1) Install dependencies: `bun install`

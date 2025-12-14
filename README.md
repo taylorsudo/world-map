@@ -61,5 +61,5 @@ const CONFIG = {
 
 ## Troubleshooting
 - Popups empty or markers missing? Check that Latitude/Longitude are numbers and the database is shared with your integration.
-- Still seeing defaults for icons? Add/adjust category names in Notion or tweak the mapping in `server.js`.
+- Still seeing defaults for icons? Ensure your Notion `Category` exactly matches the icon name in `icons.js`, or tweak the mapping in `server.js`.
 - Use the browser console for fetch errors; the backend also logs Notion query issues.

@@ -17,8 +17,14 @@ const CONFIG = {
 
 let map;
 
+function normalizeIconKey(rawKey) {
+    if (!rawKey) return 'Quest';
+    const cleaned = rawKey.toString().trim();
+    return icons[cleaned] ? cleaned : 'Quest';
+}
+
 function addMarker(location) {
-    const iconKey = location.icon && icons[location.icon] ? location.icon : 'Quest';
+    const iconKey = normalizeIconKey(location.icon);
     const marker = new Marker([location.lat, location.lng], {
         icon: icons[iconKey]
     }).addTo(map);

@@ -7,363 +7,363 @@ const ICON_DEFAULTS = {
 };
 
 export const icons = {
-    AgilityShortcut: new Icon({
+    'Agility Shortcut': new Icon({
         iconUrl: 'icons/Agility_shortcut_icon.png',
         ...ICON_DEFAULTS
     }),
-    AgilityTraining: new Icon({
+    'Agility Training': new Icon({
         iconUrl: 'icons/Agility_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    Altar: new Icon({
+    'Altar': new Icon({
         iconUrl: 'icons/Altar_icon.png',
         ...ICON_DEFAULTS
     }),
-    AmuletShop: new Icon({
+    'Amulet Shop': new Icon({
         iconUrl: 'icons/Amulet_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Anvil: new Icon({
+    'Anvil': new Icon({
         iconUrl: 'icons/Anvil_icon.png',
         ...ICON_DEFAULTS
     }),
-    Pharmacy: new Icon({
+    'Pharmacy': new Icon({
         iconUrl: 'icons/Apothecary_icon.png',
         ...ICON_DEFAULTS
     }),
-    ArcheryShop: new Icon({
+    'Archery Shop': new Icon({
         iconUrl: 'icons/Archery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    AxeShop: new Icon({
+    'Axe Shop': new Icon({
         iconUrl: 'icons/Axe_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Bank: new Icon({
+    'Bank': new Icon({
         iconUrl: 'icons/Bank_icon.png',
         ...ICON_DEFAULTS
     }),
-    Brewery: new Icon({
+    'Brewery': new Icon({
         iconUrl: 'icons/Brewery_icon.png',
         ...ICON_DEFAULTS
     }),
-    CandleShop: new Icon({
+    'Candle Shop': new Icon({
         iconUrl: 'icons/Candle_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    ChainbodyShop: new Icon({
+    'Chainbody Shop': new Icon({
         iconUrl: 'icons/Chainbody_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    ClothesShop: new Icon({
+    'Clothes Shop': new Icon({
         iconUrl: 'icons/Clothes_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    CombatTraining: new Icon({
+    'Combat Training': new Icon({
         iconUrl: 'icons/Combat_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    CookeryShop: new Icon({
+    'Cookery Shop': new Icon({
         iconUrl: 'icons/Cookery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    CookingRange: new Icon({
+    'Cooking Range': new Icon({
         iconUrl: 'icons/Cooking_range_icon.png',
         ...ICON_DEFAULTS
     }),
-    CraftingShop: new Icon({
+    'Crafting Shop': new Icon({
         iconUrl: 'icons/Crafting_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    DairyChurn: new Icon({
+    'Dairy Churn': new Icon({
         iconUrl: 'icons/Dairy_churn_icon.png',
         ...ICON_DEFAULTS
     }),
-    DairyCow: new Icon({
+    'Dairy Cow': new Icon({
         iconUrl: 'icons/Dairy_cow_icon.png',
         ...ICON_DEFAULTS
     }),
-    DeathsOffice: new Icon({
+    'Deaths Office': new Icon({
         iconUrl: 'icons/Death\'s_Office_icon.png',
         ...ICON_DEFAULTS
     }),
-    DockingPoint: new Icon({
+    'Docking Point': new Icon({
         iconUrl: 'icons/Docking_point_icon.png',
         ...ICON_DEFAULTS
     }),
-    Dungeon: new Icon({
+    'Dungeon': new Icon({
         iconUrl: 'icons/Dungeon_icon.png',
         ...ICON_DEFAULTS
     }),
-    DungeonMapLink: new Icon({
+    'Dungeon Map Link': new Icon({
         iconUrl: 'icons/Dungeon_map_link_icon.png',
         ...ICON_DEFAULTS
     }),
-    DyeTrader: new Icon({
+    'Dye Trader': new Icon({
         iconUrl: 'icons/Dye_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    EstateAgent: new Icon({
+    'Estate Agent': new Icon({
         iconUrl: 'icons/Estate_Agent_icon.png',
         ...ICON_DEFAULTS
     }),
-    FarmingPatch: new Icon({
+    'Farming Patch': new Icon({
         iconUrl: 'icons/Farming_patch_icon.png',
         ...ICON_DEFAULTS
     }),
-    FarmingShop: new Icon({
+    'Farming Shop': new Icon({
         iconUrl: 'icons/Farming_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    FishingShop: new Icon({
+    'Fishing Shop': new Icon({
         iconUrl: 'icons/Fishing_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    FishingSpot: new Icon({
+    'Fishing Spot': new Icon({
         iconUrl: 'icons/Fishing_spot_icon.png',
         ...ICON_DEFAULTS
     }),
-    FlagMapMarker: new Icon({
+    'Flag Map Marker': new Icon({
         iconUrl: 'icons/Flag_map_marker.png',
         ...ICON_DEFAULTS
     }),
-    Restaurant: new Icon({
+    'Restaurant': new Icon({
         iconUrl: 'icons/Food_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    FurTrader: new Icon({
+    'Fur Trader': new Icon({
         iconUrl: 'icons/Fur_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    Furnace: new Icon({
+    'Furnace': new Icon({
         iconUrl: 'icons/Furnace_icon.png',
         ...ICON_DEFAULTS
     }),
-    GardenSupplier: new Icon({
+    'Garden Supplier': new Icon({
         iconUrl: 'icons/Garden_supplier_icon.png',
         ...ICON_DEFAULTS
     }),
-    GateMapMarker: new Icon({
+    'Gate Map Marker': new Icon({
         iconUrl: 'icons/Gate_map_marker.png',
         ...ICON_DEFAULTS
     }),
-    GemShop: new Icon({
+    'Gem Shop': new Icon({
         iconUrl: 'icons/Gem_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    GeneralStore: new Icon({
+    'General Store': new Icon({
         iconUrl: 'icons/General_store_icon.png',
         ...ICON_DEFAULTS
     }),
-    GrandExchange: new Icon({
+    'Grand Exchange': new Icon({
         iconUrl: 'icons/Grand_Exchange_icon.png',
         ...ICON_DEFAULTS
     }),
-    Hairdresser: new Icon({
+    'Hairdresser': new Icon({
         iconUrl: 'icons/Hairdresser_icon.png',
         ...ICON_DEFAULTS
     }),
-    HelmetShop: new Icon({
+    'Helmet Shop': new Icon({
         iconUrl: 'icons/Helmet_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Herbalist: new Icon({
+    'Herbalist': new Icon({
         iconUrl: 'icons/Herbalist_icon.png',
         ...ICON_DEFAULTS
     }),
-    HolidayEvent: new Icon({
+    'Holiday Event': new Icon({
         iconUrl: 'icons/Holiday_event_icon.png',
         ...ICON_DEFAULTS
     }),
-    House: new Icon({
+    'House': new Icon({
         iconUrl: 'icons/House_portal_icon.png',
         ...ICON_DEFAULTS
     }),
-    HunterShop: new Icon({
+    'Hunter Shop': new Icon({
         iconUrl: 'icons/Hunter_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    HunterTraining: new Icon({
+    'Hunter Training': new Icon({
         iconUrl: 'icons/Hunter_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    Jeweller: new Icon({
+    'Jeweller': new Icon({
         iconUrl: 'icons/Jewellery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Kebabs: new Icon({
+    'Kebabs': new Icon({
         iconUrl: 'icons/Kebab_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Loom: new Icon({
+    'Loom': new Icon({
         iconUrl: 'icons/Loom_icon.png',
         ...ICON_DEFAULTS
     }),
-    LumbridgeGuide: new Icon({
+    'Lumbridge Guide': new Icon({
         iconUrl: 'icons/Lumbridge_Guide_icon.png',
         ...ICON_DEFAULTS
     }),
-    MaceShop: new Icon({
+    'Mace Shop': new Icon({
         iconUrl: 'icons/Mace_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    MagicShop: new Icon({
+    'Magic Shop': new Icon({
         iconUrl: 'icons/Magic_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    MakeoverMage: new Icon({
+    'Makeover Mage': new Icon({
         iconUrl: 'icons/Makeover_Mage_icon.png',
         ...ICON_DEFAULTS
     }),
-    MapLink: new Icon({
+    'Map Link': new Icon({
         iconUrl: 'icons/Map_link_icon.png',
         ...ICON_DEFAULTS
     }),
-    MinigameMap: new Icon({
+    'Minigame Map': new Icon({
         iconUrl: 'icons/Minigame_map_icon.png',
         ...ICON_DEFAULTS
     }),
-    MiningShop: new Icon({
+    'Mining Shop': new Icon({
         iconUrl: 'icons/Mining_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    MiningSite: new Icon({
+    'Mining Site': new Icon({
         iconUrl: 'icons/Mining_site_icon.png',
         ...ICON_DEFAULTS
     }),
-    NewspaperTrader: new Icon({
+    'Newspaper Trader': new Icon({
         iconUrl: 'icons/Newspaper_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    PetShop: new Icon({
+    'Pet Shop': new Icon({
         iconUrl: 'icons/Pet_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    PlatebodyShop: new Icon({
+    'Platebody Shop': new Icon({
         iconUrl: 'icons/Platebody_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    PlatelegsShop: new Icon({
+    'Platelegs Shop': new Icon({
         iconUrl: 'icons/Platelegs_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    PlateskirtShop: new Icon({
+    'Plateskirt Shop': new Icon({
         iconUrl: 'icons/Plateskirt_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    PollBooth: new Icon({
+    'Poll Booth': new Icon({
         iconUrl: 'icons/Poll_booth_icon.png',
         ...ICON_DEFAULTS
     }),
-    PotteryWheel: new Icon({
+    'Pottery Wheel': new Icon({
         iconUrl: 'icons/Pottery_wheel_icon.png',
         ...ICON_DEFAULTS
     }),
-    Pub: new Icon({
+    'Pub': new Icon({
         iconUrl: 'icons/Pub_icon.png',
         ...ICON_DEFAULTS
     }),
-    Quest: new Icon({
+    'Quest': new Icon({
         iconUrl: 'icons/Quest_start_icon.png',
         ...ICON_DEFAULTS
     }),
-    RareTrees: new Icon({
+    'Rare Trees': new Icon({
         iconUrl: 'icons/Rare_trees_icon.png',
         ...ICON_DEFAULTS
     }),
-    RopeTrader: new Icon({
+    'Rope Trader': new Icon({
         iconUrl: 'icons/Rope_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    Beach: new Icon({
+    'Beach': new Icon({
         iconUrl: 'icons/Sandpit_icon.png',
         ...ICON_DEFAULTS
     }),
-    Sawmill: new Icon({
+    'Sawmill': new Icon({
         iconUrl: 'icons/Sawmill_icon.png',
         ...ICON_DEFAULTS
     }),
-    ScimitarShop: new Icon({
+    'Scimitar Shop': new Icon({
         iconUrl: 'icons/Scimitar_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    ShieldShop: new Icon({
+    'Shield Shop': new Icon({
         iconUrl: 'icons/Shield_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    SilkTrader: new Icon({
+    'Silk Trader': new Icon({
         iconUrl: 'icons/Silk_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    SilverShop: new Icon({
+    'Silver Shop': new Icon({
         iconUrl: 'icons/Silver_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    SingingBowl: new Icon({
+    'Singing Bowl': new Icon({
         iconUrl: 'icons/Singing_bowl_icon.png',
         ...ICON_DEFAULTS
     }),
-    SlayerMaster: new Icon({
+    'Slayer Master': new Icon({
         iconUrl: 'icons/Slayer_Master_icon.png',
         ...ICON_DEFAULTS
     }),
-    SpiceShop: new Icon({
+    'Spice Shop': new Icon({
         iconUrl: 'icons/Spice_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    SpinningWheel: new Icon({
+    'Spinning Wheel': new Icon({
         iconUrl: 'icons/Spinning_wheel_icon.png',
         ...ICON_DEFAULTS
     }),
-    StaffShop: new Icon({
+    'Staff Shop': new Icon({
         iconUrl: 'icons/Staff_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Stonemason: new Icon({
+    'Stonemason': new Icon({
         iconUrl: 'icons/Stonemason_icon.png',
         ...ICON_DEFAULTS
     }),
-    SwordShop: new Icon({
+    'Sword Shop': new Icon({
         iconUrl: 'icons/Sword_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    Tannery: new Icon({
+    'Tannery': new Icon({
         iconUrl: 'icons/Tannery_icon.png',
         ...ICON_DEFAULTS
     }),
-    TaskMaster: new Icon({
+    'Task Master': new Icon({
         iconUrl: 'icons/Task_Master_icon.png',
         ...ICON_DEFAULTS
     }),
-    Taxidermist: new Icon({
+    'Taxidermist': new Icon({
         iconUrl: 'icons/Taxidermist_icon.png',
         ...ICON_DEFAULTS
     }),
-    TeaTrader: new Icon({
+    'Tea Trader': new Icon({
         iconUrl: 'icons/Tea_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    ThievingActivity: new Icon({
+    'Thieving Activity': new Icon({
         iconUrl: 'icons/Thieving_activity_icon.png',
         ...ICON_DEFAULTS
     }),
-    Transport: new Icon({
+    'Transport': new Icon({
         iconUrl: 'icons/Transportation_icon.png',
         ...ICON_DEFAULTS
     }),
-    WaterSource: new Icon({
+    'Water Source': new Icon({
         iconUrl: 'icons/Water_source_icon.png',
         ...ICON_DEFAULTS
     }),
-    Windmill: new Icon({
+    'Windmill': new Icon({
         iconUrl: 'icons/Windmill_icon.png',
         ...ICON_DEFAULTS
     }),
-    WineTrader: new Icon({
+    'Wine Trader': new Icon({
         iconUrl: 'icons/Wine_trader_icon.png',
         ...ICON_DEFAULTS
     }),
-    WoodcuttingStump: new Icon({
+    'Woodcutting Stump': new Icon({
         iconUrl: 'icons/Woodcutting_stump_icon.png',
         ...ICON_DEFAULTS
     })

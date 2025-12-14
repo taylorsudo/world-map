@@ -15,7 +15,7 @@ export const icons = {
         iconUrl: 'icons/Agility_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Altar': new Icon({
+    'Church': new Icon({
         iconUrl: 'icons/Altar_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -151,11 +151,11 @@ export const icons = {
         iconUrl: 'icons/Gem_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'General Store': new Icon({
+    'Convenience Store': new Icon({
         iconUrl: 'icons/General_store_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Grand Exchange': new Icon({
+    'Market': new Icon({
         iconUrl: 'icons/Grand_Exchange_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -167,7 +167,7 @@ export const icons = {
         iconUrl: 'icons/Helmet_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Herbalist': new Icon({
+    'Dispensary': new Icon({
         iconUrl: 'icons/Herbalist_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -187,7 +187,7 @@ export const icons = {
         iconUrl: 'icons/Hunter_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Jeweller': new Icon({
+    'Jewellery Store': new Icon({
         iconUrl: 'icons/Jewellery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -231,7 +231,7 @@ export const icons = {
         iconUrl: 'icons/Mining_site_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Newspaper Trader': new Icon({
+    'Newsagency': new Icon({
         iconUrl: 'icons/Newspaper_trader_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -267,7 +267,7 @@ export const icons = {
         iconUrl: 'icons/Quest_start_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Rare Trees': new Icon({
+    'Park': new Icon({
         iconUrl: 'icons/Rare_trees_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -339,7 +339,7 @@ export const icons = {
         iconUrl: 'icons/Taxidermist_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Tea Trader': new Icon({
+    'Cafe': new Icon({
         iconUrl: 'icons/Tea_trader_icon.png',
         ...ICON_DEFAULTS
     }),
@@ -359,7 +359,7 @@ export const icons = {
         iconUrl: 'icons/Windmill_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Wine Trader': new Icon({
+    'Bottle Shop': new Icon({
         iconUrl: 'icons/Wine_trader_icon.png',
         ...ICON_DEFAULTS
     }),

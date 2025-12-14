@@ -191,7 +191,7 @@ export const icons = {
         iconUrl: 'icons/Jewellery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Kebabs': new Icon({
+    'Kebab Shop': new Icon({
         iconUrl: 'icons/Kebab_shop_icon.png',
         ...ICON_DEFAULTS
     }),

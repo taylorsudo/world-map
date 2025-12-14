@@ -1,6 +1,6 @@
 import { Map as LeafletMap, TileLayer, Marker } from 'leaflet';
 import { icons } from './icons.js';
-import { fetchNotionPlaces } from './placesService.js';
+import { fetchNotionPlaces, fetchNotionPageContent } from './placesService.js';
 
 // Configuration
 const CONFIG = {
@@ -29,11 +29,56 @@ function addMarker(location) {
         icon: icons[iconKey]
     }).addTo(map);
 
-    marker.bindPopup(`
-        <strong>${location.name}</strong><br>
-        ${location.description || ''}
-        ${location.category ? `<br><em>${location.category}</em>` : ''}
-    `);
+    // Create initial popup content
+    const initialContent = `
+        <div class="popup-title">${location.name}</div>
+        <div class="popup-content">Loading details...</div>
+    `;
+
+    marker.bindPopup(initialContent);
+
+    // When popup opens, fetch and display Notion content
+    marker.on('popupopen', async () => {
+        if (!location.id) {
+            marker.setPopupContent(`
+                <div class="popup-title">${location.name}</div>
+                <div class="popup-content">No linked Notion page</div>
+            `);
+            return;
+        }
+
+        try {
+            const data = await fetchNotionPageContent(location.id);
+
+            let content = `<div class="popup-title">${location.name}</div>`;
+
+            // Add address if available
+            if (location.address || location.description) {
+                content += `<div class="popup-address">${location.address || location.description}</div>`;
+            }
+
+            if (data.blocks && data.blocks.length > 0) {
+                const notionText = data.blocks.map(block => {
+                    if (block.type?.startsWith('heading')) {
+                        return `<strong>${block.text}</strong>`;
+                    }
+                    return block.text;
+                }).join('<br>');
+                content += `<div class="popup-content">${notionText}</div>`;
+            } else {
+                content += `<div class="popup-content">No content available</div>`;
+            }
+
+            marker.setPopupContent(content);
+        } catch (error) {
+            console.error('Failed to fetch Notion page content:', error);
+            marker.setPopupContent(`
+                <div class="popup-title">${location.name}</div>
+                <div class="popup-address">${location.address || location.description || ''}</div>
+                <div class="popup-content">Failed to load details</div>
+            `);
+        }
+    });
 
     return marker;
 }

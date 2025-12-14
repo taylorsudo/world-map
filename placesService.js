@@ -27,6 +27,7 @@ export async function fetchNotionPlaces() {
         const data = await response.json();
 
         return data.places.map(place => ({
+            id: place.id,
             name: place.name,
             lat: place.lat,
             lng: place.lng,
@@ -39,4 +40,13 @@ export async function fetchNotionPlaces() {
         console.error('Error fetching Notion places:', error);
         throw error;
     }
+}
+
+export async function fetchNotionPageContent(pageId) {
+    const response = await fetch(`${NOTION_API_BASE_URL}/page?id=${encodeURIComponent(pageId)}`);
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`Failed to fetch page content: ${response.status} ${text}`);
+    }
+    return response.json();
 }

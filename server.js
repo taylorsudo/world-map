@@ -54,7 +54,7 @@ async function serveStatic(pathname) {
         headers.set('Content-Type', MIME_MAP[ext]);
     }
     // Cache static assets aggressively; HTML minimal to allow deploy updates
-    if (ext === '.html') {
+    if (ext === '.html' || ext === '.js') {
         headers.set('Cache-Control', 'no-cache');
     } else {
         headers.set('Cache-Control', 'public, max-age=31536000, immutable');
@@ -115,6 +115,78 @@ async function getNotionPlaces() {
     }
 }
 
+async function getNotionPageContent(pageId) {
+    if (!notion || !NOTION_DATABASE_ID) {
+        return {
+            status: 500,
+            body: {
+                error: 'Notion API not configured',
+                message: 'Please set NOTION_API_KEY and NOTION_DATABASE_ID in .env'
+            }
+        };
+    }
+
+    if (!pageId) {
+        return {
+            status: 400,
+            body: {
+                error: 'Missing page id'
+            }
+        };
+    }
+
+    try {
+        const page = await notion.pages.retrieve({ page_id: pageId });
+        const title = page.properties?.Name?.title
+            ?.map(textItem => textItem.plain_text)
+            .join('')
+            .trim() || 'Untitled';
+
+        const blocks = [];
+        let cursor;
+        do {
+            const response = await notion.blocks.children.list({
+                block_id: pageId,
+                start_cursor: cursor
+            });
+            blocks.push(...response.results);
+            cursor = response.has_more ? response.next_cursor : null;
+        } while (cursor);
+
+        const serializedBlocks = blocks
+            .map(block => {
+                const payload = block[block.type];
+                const rich = payload?.rich_text || [];
+                const text = rich.map(t => t.plain_text).join('').trim();
+                if (!text) return null;
+                return {
+                    id: block.id,
+                    type: block.type,
+                    text
+                };
+            })
+            .filter(Boolean);
+
+        return {
+            status: 200,
+            body: {
+                id: pageId,
+                title,
+                blocks: serializedBlocks
+            }
+        };
+    } catch (error) {
+        console.error('Error fetching Notion page content:', error);
+        return {
+            status: 500,
+            body: {
+                error: 'Failed to fetch page content from Notion',
+                message: error.message
+            }
+        };
+    }
+}
+
 const server = Bun.serve({
     port: PORT,
     async fetch(req) {
@@ -137,6 +209,17 @@ const server = Bun.serve({
 
         if (pathname === '/api/notion/places') {
             const { status, body } = await getNotionPlaces();
+            return new Response(JSON.stringify(body), {
+                status,
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                }
+            });
+        }
+
+        if (pathname === '/api/notion/page') {
+            const pageId = url.searchParams.get('id');
+            const { status, body } = await getNotionPageContent(pageId);
             return new Response(JSON.stringify(body), {
                 status,
                 headers: {

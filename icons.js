@@ -11,12 +11,12 @@ export const icons = {
         iconUrl: 'icons/Agility_shortcut_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Agility Training': new Icon({
-        iconUrl: 'icons/Agility_training_icon.png',
+    'Running Route': new Icon({
+        iconUrl: 'icons/Running_Route.png',
         ...ICON_DEFAULTS
     }),
     'Church': new Icon({
-        iconUrl: 'icons/Altar_icon.png',
+        iconUrl: 'icons/Church.png',
         ...ICON_DEFAULTS
     }),
     'Amulet Shop': new Icon({
@@ -28,7 +28,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Pharmacy': new Icon({
-        iconUrl: 'icons/Apothecary_icon.png',
+        iconUrl: 'icons/Pharmacy.png',
         ...ICON_DEFAULTS
     }),
     'Archery Shop': new Icon({
@@ -40,11 +40,11 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Bank': new Icon({
-        iconUrl: 'icons/Bank_icon.png',
+        iconUrl: 'icons/Bank.png',
         ...ICON_DEFAULTS
     }),
     'Brewery': new Icon({
-        iconUrl: 'icons/Brewery_icon.png',
+        iconUrl: 'icons/Brewery.png',
         ...ICON_DEFAULTS
     }),
     'Candle Shop': new Icon({
@@ -56,19 +56,19 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Clothes Shop': new Icon({
-        iconUrl: 'icons/Clothes_shop_icon.png',
+        iconUrl: 'icons/Clothes_Shop.png',
         ...ICON_DEFAULTS
     }),
-    'Combat Training': new Icon({
-        iconUrl: 'icons/Combat_training_icon.png',
+    'Gym': new Icon({
+        iconUrl: 'icons/Gym.png',
         ...ICON_DEFAULTS
     }),
     'Cookery Shop': new Icon({
         iconUrl: 'icons/Cookery_shop_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Cooking Range': new Icon({
-        iconUrl: 'icons/Cooking_range_icon.png',
+    'Kitchen': new Icon({
+        iconUrl: 'icons/Kitchen.png',
         ...ICON_DEFAULTS
     }),
     'Crafting Shop': new Icon({
@@ -83,8 +83,8 @@ export const icons = {
         iconUrl: 'icons/Dairy_cow_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Deaths Office': new Icon({
-        iconUrl: 'icons/Death\'s_Office_icon.png',
+    'Cemetery': new Icon({
+        iconUrl: 'icons/Cemetery.png',
         ...ICON_DEFAULTS
     }),
     'Docking Point': new Icon({
@@ -120,7 +120,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Fishing Spot': new Icon({
-        iconUrl: 'icons/Fishing_spot_icon.png',
+        iconUrl: 'icons/Fishing_Spot.png',
         ...ICON_DEFAULTS
     }),
     'Flag Map Marker': new Icon({
@@ -128,7 +128,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Restaurant': new Icon({
-        iconUrl: 'icons/Food_shop_icon.png',
+        iconUrl: 'icons/Restaurant.png',
         ...ICON_DEFAULTS
     }),
     'Fur Trader': new Icon({
@@ -152,15 +152,15 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Supermarket': new Icon({
-        iconUrl: 'icons/General_store_icon.png',
+        iconUrl: 'icons/Supermarket.png',
         ...ICON_DEFAULTS
     }),
     'Market': new Icon({
-        iconUrl: 'icons/Grand_Exchange_icon.png',
+        iconUrl: 'icons/Market.png',
         ...ICON_DEFAULTS
     }),
     'Hairdresser': new Icon({
-        iconUrl: 'icons/Hairdresser_icon.png',
+        iconUrl: 'icons/Hairdresser.png',
         ...ICON_DEFAULTS
     }),
     'Helmet Shop': new Icon({
@@ -168,7 +168,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Dispensary': new Icon({
-        iconUrl: 'icons/Herbalist_icon.png',
+        iconUrl: 'icons/Dispensary.png',
         ...ICON_DEFAULTS
     }),
     'Holiday Event': new Icon({
@@ -176,7 +176,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Hotel': new Icon({
-        iconUrl: 'icons/House_portal_icon.png',
+        iconUrl: 'icons/Hotel.png',
         ...ICON_DEFAULTS
     }),
     'Hunter Shop': new Icon({
@@ -187,12 +187,12 @@ export const icons = {
         iconUrl: 'icons/Hunter_training_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Jewellery Store': new Icon({
-        iconUrl: 'icons/Jewellery_shop_icon.png',
+    'Jewellery Shop': new Icon({
+        iconUrl: 'icons/Jewellery_Shop.png',
         ...ICON_DEFAULTS
     }),
     'Kebab Shop': new Icon({
-        iconUrl: 'icons/Kebab_shop_icon.png',
+        iconUrl: 'icons/Kebab_Shop.png',
         ...ICON_DEFAULTS
     }),
     'Loom': new Icon({
@@ -212,7 +212,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Medical Spa': new Icon({
-        iconUrl: 'icons/Makeover_Mage_icon.png',
+        iconUrl: 'icons/Medical_Spa.png',
         ...ICON_DEFAULTS
     }),
     'Map Link': new Icon({
@@ -232,11 +232,11 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Newsagency': new Icon({
-        iconUrl: 'icons/Newspaper_trader_icon.png',
+        iconUrl: 'icons/Newsagency.png',
         ...ICON_DEFAULTS
     }),
     'Pet Shop': new Icon({
-        iconUrl: 'icons/Pet_shop_icon.png',
+        iconUrl: 'icons/Pet_Shop.png',
         ...ICON_DEFAULTS
     }),
     'Platebody Shop': new Icon({
@@ -260,15 +260,15 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Bar': new Icon({
-        iconUrl: 'icons/Pub_icon.png',
+        iconUrl: 'icons/Bar.png',
         ...ICON_DEFAULTS
     }),
     'Quest': new Icon({
-        iconUrl: 'icons/Quest_start_icon.png',
+        iconUrl: 'icons/Quest.png',
         ...ICON_DEFAULTS
     }),
     'Park': new Icon({
-        iconUrl: 'icons/Rare_trees_icon.png',
+        iconUrl: 'icons/Park.png',
         ...ICON_DEFAULTS
     }),
     'Rope Trader': new Icon({
@@ -276,7 +276,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Beach': new Icon({
-        iconUrl: 'icons/Sandpit_icon.png',
+        iconUrl: 'icons/Beach.png',
         ...ICON_DEFAULTS
     }),
     'Sawmill': new Icon({
@@ -331,8 +331,8 @@ export const icons = {
         iconUrl: 'icons/Tannery_icon.png',
         ...ICON_DEFAULTS
     }),
-    'Task Master': new Icon({
-        iconUrl: 'icons/Task_Master_icon.png',
+    'Landmark': new Icon({
+        iconUrl: 'icons/Landmark.png',
         ...ICON_DEFAULTS
     }),
     'Taxidermist': new Icon({
@@ -340,7 +340,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Cafe': new Icon({
-        iconUrl: 'icons/Tea_trader_icon.png',
+        iconUrl: 'icons/Cafe.png',
         ...ICON_DEFAULTS
     }),
     'Thieving Activity': new Icon({
@@ -348,11 +348,11 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Transport': new Icon({
-        iconUrl: 'icons/Transportation_icon.png',
+        iconUrl: 'icons/Transport.png',
         ...ICON_DEFAULTS
     }),
     'Fountain': new Icon({
-        iconUrl: 'icons/Water_source_icon.png',
+        iconUrl: 'icons/Fountain.png',
         ...ICON_DEFAULTS
     }),
     'Windmill': new Icon({
@@ -360,7 +360,7 @@ export const icons = {
         ...ICON_DEFAULTS
     }),
     'Bottle Shop': new Icon({
-        iconUrl: 'icons/Wine_trader_icon.png',
+        iconUrl: 'icons/Bottle_Shop.png',
         ...ICON_DEFAULTS
     }),
     'Woodcutting Stump': new Icon({

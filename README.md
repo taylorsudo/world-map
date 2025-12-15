@@ -25,6 +25,11 @@ PORT=3000
 5) Start the server: `bun start` then open http://localhost:3000
 
 ## Notion Database Schema
+
+<div align="center">
+  <video width="300" controls src="https://github.com/user-attachments/assets/f28bcb47-f88a-4e0f-a806-4a1a3de785d4"></video>
+</div>
+
 **I automate this with Apple Maps using an Apple Shortcut, which I will add here soon.** In the meantime, create a table database with these properties:
 | Property | Type | Notes |
 | --- | --- | --- |

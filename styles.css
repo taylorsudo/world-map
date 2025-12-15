@@ -86,6 +86,7 @@ body {
     width: 16px;
     height: 16px;
     display: block;
+    margin-left: 2px;
 }
 
 .popup-content {

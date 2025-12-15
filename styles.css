@@ -91,6 +91,7 @@ body {
 .popup-content {
     font-family: 'RuneScape Plain 12', serif;
     font-size: 16px;
+    line-height: 1.2;
     color: #7f0000;
 }
 

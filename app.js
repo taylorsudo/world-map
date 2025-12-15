@@ -56,14 +56,7 @@ function addMarker(location) {
             const hasSourceLink = location.sourceUrl && !isNotionUrl(location.sourceUrl);
 
             let content = `
-                <div class="popup-title">
-                    ${location.name}
-                    ${hasSourceLink ? `
-                        <a class="popup-source-link" href="${location.sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open source link">
-                            <img class="popup-source-icon" src="/icons/Map_Link.png" alt="" />
-                        </a>
-                    ` : ''}
-                </div>
+                <div class="popup-title">${location.name}${hasSourceLink ? `<a class="popup-source-link" href="${location.sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open source link"><img class="popup-source-icon" src="/icons/Map_Link.png" alt=""></a>` : ''}</div>
             `;
 
             const addressText = location.address || location.description || '';

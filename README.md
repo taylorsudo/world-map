@@ -2,6 +2,8 @@
 
 Leaflet map that pulls locations from a Notion database (or manual entries) and displays them with RuneScape icons.
 
+![Preview](preview.png)
+
 ## Features
 - Locations pulled from Notion database with `Category`, `Address`, `Latitude`, and `Longitude` properties
 - Optional manual `customPlaces` list for quick overrides

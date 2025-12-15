@@ -28,6 +28,7 @@ export default async function handler(req, res) {
                 .map(textItem => textItem.plain_text)
                 .join('')
                 .trim();
+            const sourceUrl = (props['Source URL']?.url || '').trim();
 
             const icon = category || 'Quest';
             const description = address || category;
@@ -40,7 +41,8 @@ export default async function handler(req, res) {
                 icon,
                 description,
                 category,
-                address
+                address,
+                sourceUrl
             };
         }).filter(place => place.lat !== null && place.lng !== null);
 

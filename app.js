@@ -23,6 +23,10 @@ function normalizeIconKey(rawKey) {
     return icons[cleaned] ? cleaned : 'Quest';
 }
 
+function isNotionUrl(url) {
+    return /^https?:\/\/[^\\s]+notion\\.so/i.test(url) || /^https?:\/\/[^\\s]+\\.notion\\.site/i.test(url);
+}
+
 function addMarker(location) {
     const iconKey = normalizeIconKey(location.icon);
     const marker = new Marker([location.lat, location.lng], {
@@ -49,12 +53,22 @@ function addMarker(location) {
 
         try {
             const data = await fetchNotionPageContent(location.id);
+            const hasSourceLink = location.sourceUrl && !isNotionUrl(location.sourceUrl);
 
-            let content = `<div class="popup-title">${location.name}</div>`;
+            let content = `
+                <div class="popup-title">
+                    ${location.name}
+                    ${hasSourceLink ? `
+                        <a class="popup-source-link" href="${location.sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open source link">
+                            <img class="popup-source-icon" src="/icons/Map_Link.png" alt="" />
+                        </a>
+                    ` : ''}
+                </div>
+            `;
 
-            // Add address if available
-            if (location.address || location.description) {
-                content += `<div class="popup-address">${location.address || location.description}</div>`;
+            const addressText = location.address || location.description || '';
+            if (addressText) {
+                content += `<div class="popup-address">${addressText}</div>`;
             }
 
             if (data.blocks && data.blocks.length > 0) {

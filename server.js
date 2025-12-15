@@ -89,6 +89,7 @@ async function getNotionPlaces() {
                 .map(textItem => textItem.plain_text)
                 .join('')
                 .trim();
+            const sourceUrl = (props['Source URL']?.url || '').trim();
 
             return {
                 id: page.id,
@@ -98,7 +99,8 @@ async function getNotionPlaces() {
                 icon: category || 'Quest',
                 description: address || category,
                 category,
-                address
+                address,
+                sourceUrl
             };
         }).filter(place => place.lat !== null && place.lng !== null);
 

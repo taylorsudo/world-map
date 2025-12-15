@@ -34,7 +34,8 @@ export async function fetchNotionPlaces() {
             icon: place.icon || 'Quest',
             description: place.description || place.address || '',
             category: place.category || '',
-            address: place.address || ''
+            address: place.address || '',
+            sourceUrl: place.sourceUrl || ''
         }));
     } catch (error) {
         console.error('Error fetching Notion places:', error);

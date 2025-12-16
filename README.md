@@ -26,9 +26,9 @@ PORT=3000
 
 ## Notion Database Schema
 
-<p align="center">
+<div align="center">
   <video controls src="https://github.com/user-attachments/assets/4b6c7621-8783-43b6-8603-643522e6b60d"></video>
-</p>
+</div>
 
 **I automate this with Apple Maps using an Apple Shortcut, which I will add here soon.** In the meantime, create a table database with these properties:
 | Property | Type | Notes |

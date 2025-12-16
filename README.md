@@ -27,7 +27,7 @@ PORT=3000
 ## Notion Database Schema
 
 <p align="center">
-  <video controls src="demo.mp4"></video>
+  <video controls src="https://github.com/taylorsudo/world-map/raw/refs/heads/main/demo.mp4"></video>
 </p>
 
 **I automate this with Apple Maps using an Apple Shortcut, which I will add here soon.** In the meantime, create a table database with these properties:

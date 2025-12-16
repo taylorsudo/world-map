@@ -1,4 +1,4 @@
-import { Map as LeafletMap, TileLayer, Marker } from 'leaflet';
+import { Map as LeafletMap, TileLayer, Marker, LayerGroup } from 'leaflet';
 import { icons } from './icons.js';
 import { fetchNotionPlaces, fetchNotionPageContent } from './placesService.js';
 
@@ -15,7 +15,15 @@ const CONFIG = {
     ]
 };
 
+const VIEWPORT_PADDING = 0.2; // expand bounds to prefetch slightly outside the screen
+const FETCH_DEBOUNCE_MS = 200;
+
 let map;
+let notionLayer;
+let customLayer;
+let hasHighlighted = false;
+let pendingFetchTimeout = null;
+let fetchSeq = 0;
 
 function normalizeIconKey(rawKey) {
     if (!rawKey) return 'Quest';
@@ -27,11 +35,11 @@ function isNotionUrl(url) {
     return /^https?:\/\/[^\\s]+notion\\.so/i.test(url) || /^https?:\/\/[^\\s]+\\.notion\\.site/i.test(url);
 }
 
-function addMarker(location) {
+function addMarker(location, targetLayer = map) {
     const iconKey = normalizeIconKey(location.icon);
     const marker = new Marker([location.lat, location.lng], {
         icon: icons[iconKey]
-    }).addTo(map);
+    }).addTo(targetLayer);
 
     // Create initial popup content
     const initialContent = `
@@ -101,43 +109,103 @@ function getHighlightParams() {
     };
 }
 
-function highlightLocation(locations) {
+function getMapBoundsObject() {
+    if (!map) return null;
+    const bounds = map.getBounds();
+    return {
+        minLat: bounds.getSouth(),
+        maxLat: bounds.getNorth(),
+        minLng: bounds.getWest(),
+        maxLng: bounds.getEast()
+    };
+}
+
+function padBounds(bounds, paddingFactor = VIEWPORT_PADDING) {
+    const latSpan = bounds.maxLat - bounds.minLat || 0.1;
+    const lngSpan = bounds.maxLng - bounds.minLng || 0.1;
+    const latPad = latSpan * paddingFactor;
+    const lngPad = lngSpan * paddingFactor;
+    return {
+        minLat: bounds.minLat - latPad,
+        maxLat: bounds.maxLat + latPad,
+        minLng: bounds.minLng - lngPad,
+        maxLng: bounds.maxLng + lngPad
+    };
+}
+
+function mergeBoundsWithPoint(bounds, lat, lng) {
+    if (lat === null || lng === null) return bounds;
+    return {
+        minLat: Math.min(bounds.minLat, lat),
+        maxLat: Math.max(bounds.maxLat, lat),
+        minLng: Math.min(bounds.minLng, lng),
+        maxLng: Math.max(bounds.maxLng, lng)
+    };
+}
+
+function maybeHighlight() {
+    if (hasHighlighted) return;
     const { lat, lng } = getHighlightParams();
     if (!(lat && lng)) return;
     if (!map) return;
+    hasHighlighted = true;
     map.flyTo([lat, lng], Math.max(map.getZoom(), 15));
 }
 
-// Load and display locations
-async function loadLocations() {
-    const locations = [];
-
-    try {
-        console.log('Fetching places from Notion...');
-        const notionPlaces = await fetchNotionPlaces();
-        console.log(`Found ${notionPlaces.length} places from Notion`);
-        locations.push(...notionPlaces);
-    } catch (error) {
-        console.error('Failed to fetch Notion places:', error);
-        alert('Failed to load places from Notion. Check console for details.');
-    }
-
-    // Add custom places from CONFIG
-    if (CONFIG.customPlaces && CONFIG.customPlaces.length > 0) {
-        locations.push(...CONFIG.customPlaces.map(place => ({
+function renderCustomPlaces() {
+    if (!CONFIG.customPlaces || CONFIG.customPlaces.length === 0 || !customLayer) return;
+    customLayer.clearLayers();
+    CONFIG.customPlaces.forEach(place => {
+        addMarker({
             name: place.name,
             lat: place.lat,
             lng: place.lng,
-            icon: place.icon || 'Quest', // Default icon
-            description: place.description || ''
-        })));
-        console.log(`Added ${CONFIG.customPlaces.length} custom places`);
+            icon: place.icon || 'Quest',
+            description: place.description || '',
+            address: place.address || '',
+            sourceUrl: place.sourceUrl || ''
+        }, customLayer);
+    });
+    console.log(`Added ${CONFIG.customPlaces.length} custom places`);
+}
+
+async function loadViewportLocations() {
+    if (!map) return;
+    const mapBounds = getMapBoundsObject();
+    if (!mapBounds) return;
+    let queryBounds = padBounds(mapBounds);
+
+    const { lat: highlightLat, lng: highlightLng } = getHighlightParams();
+    if (highlightLat && highlightLng) {
+        queryBounds = mergeBoundsWithPoint(queryBounds, highlightLat, highlightLng);
     }
 
-    // Display all markers
-    locations.forEach(addMarker);
-    highlightLocation(locations);
-    console.log(`Displayed ${locations.length} locations on map`);
+    const localFetchId = ++fetchSeq;
+
+    try {
+        const locations = await fetchNotionPlaces({ bounds: queryBounds });
+        if (localFetchId !== fetchSeq) return;
+
+        if (notionLayer) {
+            notionLayer.clearLayers();
+            locations.forEach(loc => addMarker(loc, notionLayer));
+        } else {
+            locations.forEach(addMarker);
+        }
+
+        maybeHighlight();
+        console.log(`Displayed ${locations.length} locations for viewport`, queryBounds);
+    } catch (error) {
+        console.error('Failed to load Notion places:', error);
+        alert('Failed to load places from Notion. Check console for details.');
+    }
+}
+
+function scheduleViewportLoad() {
+    if (pendingFetchTimeout) {
+        clearTimeout(pendingFetchTimeout);
+    }
+    pendingFetchTimeout = setTimeout(loadViewportLocations, FETCH_DEBOUNCE_MS);
 }
 
 // Initialize
@@ -161,7 +229,12 @@ function initMap() {
         maxZoom: 19
     }).addTo(map);
 
-    loadLocations().catch(console.error);
+    notionLayer = new LayerGroup().addTo(map);
+    customLayer = new LayerGroup().addTo(map);
+    renderCustomPlaces();
+
+    map.on('moveend', scheduleViewportLoad);
+    scheduleViewportLoad();
 }
 
 // Wait for full load to guarantee #map exists
